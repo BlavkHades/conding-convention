@@ -11,18 +11,7 @@ It's been through a few different major stages in its life, including stints in
 multiple different repositories.  When in doubt about how to write or format
 something, always prefer the advice here over existing conventions in the
 code. If you're already touching some older code as part of your work, please
-do clean it up as you go along. But please do not spend hours applying the
-formatting guidelines here to code you aren't otherwise modifying. While we'd
-love for the entire codebase to follow this guide, we'd rather get there
-gradually than lose lots of git history and developer time to purely cosmetic
-changes. That said, if cosmetic changes that you're making as part of a larger
-diff keep growing in scope, it may be worth pulling them out into a separate
-diff.
-
-There's no well-defined cutoff here - just try to minimize effort for your
-reviewers. A good rule of thumb is that if your cosmetic changes require adding
-significant new sections to the diff (such as a function rename that touches
-all callsites), it should probably be pulled out into its own diff.
+do clean it up as you go along.
 
 ## General Convention ##
 
@@ -31,15 +20,13 @@ all callsites), it should probably be pulled out into its own diff.
 Perhaps one of the first things you learn as a developer is to comment your code. 
 At first it may seem like a waste of time, 
 following the mentality of ‘If they are a developer too – they can understand it’. 
-While it is true some of the time, commenting your code and providing proper documentation 
-will guide the other developers through the algorithm and logic that you implemented. 
-But don’t get carried away and comment every line of code! Obvious code should be left as is.
+- look at the comment section below for more information.
 
 ### Write readable yet efficient code ###
 Readable codes are easy to follow, yet use optimal space and time. 
 When writing code you may often want to write it in as little lines as possible.
- Perhaps you can write an entire method or function in one line, 
- but that only makes it harder to read and understand.
+Perhaps you can write an entire method or function in one line, 
+but that only makes it harder to read and understand.
 
 
 ### Use helper methods ###
@@ -57,20 +44,11 @@ This way you know what your method does, what it takes and what it should return
 You will know when it should work or when it should fail. 
 A function should always be based on test cases; not tests on functions.
 
-When creating APIs, writing Integration test that test all the behavior of an endpoint is of utmost importance
-
-
-
-### Pair programming/code review ###
-These are very helpful when it comes to refactoring your code. 
-Others might see better implementation to optimize your code or just make your code more elegant. 
-It also ensures that developers adhere to standards and the work is double checked. 
-In addition to all that, it is a wonderful way for developers to learn from each other.
+When creating APIs, writing Integration tests that test all the behavior of an endpoint is of utmost importance.
 
 ### BACKUP AND SAVE YOUR WORK OFTEN ###
-
-Enough said. Dead battery, blackout, software glitch, fire, nuclear disaster – all of these may result in loss of data. Making sure you save often and back up your code on some kind of version control system is a simple way to ensure that your code stays safe.
-
+Enough said. Dead battery, blackout, software glitch, fire, nuclear disaster – 
+all of these may result in loss of data. Making sure you save often and back up your code on some kind of version control system is a simple way to ensure that your code stays safe.
 
 ### What to include ###
 
@@ -78,35 +56,19 @@ The golden rule for what to include/import is "include/import what you use" (IWY
 this means you should not rely on any headers you include to transitively
 include other headers which have definitions you require.
 
-### Access control ###
-
-Try to avoid the `protected` keyword. It tends to give a false sense of
-security about encapsulation: since anyone can inherit from your class, anyone
-can access the `protected` member with a little extra effort.
-
-### Public data members vs. getters/setters ###
-
-Prefer declaring public member variables to using getters and setters. Getters
-and setters that don't manage object state in a nontrivial way serve to bloat
-the API and introduce unnecessary boilerplate.
-
 ## Naming ##
-
-### Components ###
-It is recommended to write components name by its purpose. 
-This approach improves the readability and maintainability of code.
 
 ### Classes ###
 Usually class name should be noun starting with uppercase letter. 
 If it contains multiple word than every inner word should start with uppercase.
 
-Eg: String, StringBuffer, Dog
+    Eg: String, StringBuffer, Dog
 
 ### Interfaces ###
 Usually interface name should be adjective starting with uppercase letter. 
 If it contains multiple word than every inner word should start with uppercase.
 
-Eg: Runnable, Serializable, Comparable
+    Eg: Runnable, Serializable, Comparable
 
 ### Methods or Functions ###
 Usually method name should either be verb or verb noun combination starting with lower letter. 
