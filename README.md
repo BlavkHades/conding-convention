@@ -19,8 +19,7 @@ do clean it up as you go along.
 
 Perhaps one of the first things you learn as a developer is to comment your code. 
 At first it may seem like a waste of time, 
-following the mentality of ‘If they are a developer too – they can understand it’. 
-- look at the comment section below for more information.
+following the mentality of ‘If they are a developer too – they can understand it’. Look at the comment section below for more information.
 
 ### Write readable yet efficient code ###
 Readable codes are easy to follow, yet use optimal space and time. 
@@ -39,7 +38,7 @@ put it in a separate method and call that within your method.
 The only things that should be hard-coded are constants. That’s it.
 
 
-### Write test cases.###
+### Write test cases. ###
 This way you know what your method does, what it takes and what it should return. 
 You will know when it should work or when it should fail. 
 A function should always be based on test cases; not tests on functions.
@@ -74,42 +73,35 @@ If it contains multiple word than every inner word should start with uppercase.
 Usually method name should either be verb or verb noun combination starting with lower letter. 
 If it contains multiple word than every inner word should start with uppercase.
 
-Eg: print(), sleep(), setSalary()
+    Eg: print(), sleep(), setSalary()
 
 Each method name should state exactly what it does.
 
-Eg: convertsIntegerToString(); solvesSimultaneousEquation(float a, float b, float c);
+    Eg: convertsIntegerToString(); solvesSimultaneousEquation(float a, float b, float c);
 
 ### Variables ###
 Usually variable name should be noun starting with lowercase letter. 
 If it contains multiple word than every inner word should start with uppercase.
 
-Eg: name, age. mobileNumber
+    Eg: name, age. mobileNumber
 
 if the variable save an array of any datatypes then the variable name should be pluralized.
 
-Eg: names, ages, mobileNumbers
+    Eg: names, ages, mobileNumbers
 
 ### Constants ###
 Usually constant name should be noun. It should contain only uppercase If it contains 
 multiple word than words are separated with ( _ ) underscore symbol. Usually we declare
 constants with public static and final modifiers.
 
+    Eg  COUNT, COUNT_OF_CARS 
 
-### Namespaces ###
-
-New namespaces should use `lowercase`---and single-word namespaces are greatly
-prefered for common usage.  For longer namespaces (e.g., `vasm_detail`), use
-`lower_case_with_underscores`.
 
 ## Formatting ##
 
 While consistent code formatting doesn't directly affect correctness, it makes
 it easier to read and maintain. For this reason, we've come up with a set of
-guidelines about how code should be formatted. There's a good chance that some
-of these will conflict with your own personal preferred style, but we believe
-that having a consistently easy to read codebase is more important than letting
-each developer write code that he or she thinks is uncompromisingly beautiful.
+guidelines about how code should be formatted.
 
 Anything not specified here is left up to the judgment of the developer.
 However, this document is not set in stone, so if a particular formatting issue
@@ -140,9 +132,11 @@ keeps coming up in code review it probably deserves a few lines in here.
         }
 
 - Declare one variable per var statement
-  Eg: var keys = [‘foo’, ‘bar’];
-      Integer values = 25;
-      String value = "value";
+  Eg: 
+    
+        var keys = [‘foo’, ‘bar’];
+        Integer values = 25;
+        String value = "value";
 
 
 ### Method/Function ###
@@ -183,12 +177,14 @@ keeps coming up in code review it probably deserves a few lines in here.
 -   Method chaining: One method per line should be used if you want to chain methods.
     You should also indent these methods so it’s easier to tell they are part of the same chain.
     Eg: 
-        User
+            
+            User
             .findOne({ name: 'foo' })
             .populate('bar')
             .exec(function(err, user) {
                return true;
             });
+
 ### Comments ###
 -   Comments: Use slashes for both single line and multi line comments.
     Try to write comments that explain higher level mechanisms or clarify difficult segments of your code. 
@@ -198,9 +194,14 @@ keeps coming up in code review it probably deserves a few lines in here.
         //this method handles the verification of a card transaction
         //this method triggers an event to update a users subscription...
         //if the transaction is successful
+        function resolveCardPayment(parameters){}
+
 -   They should not state the obvious.
--   They should be consistent with what they describe.
--   It should be clear what they describe (e.g., which line, block).
+    Eg:
+
+        //add two variables together
+        x + y = z
+
 -   They should be readable by any future maintainer.
 
 ### Code Commit ###
