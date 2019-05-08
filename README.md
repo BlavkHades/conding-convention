@@ -90,7 +90,7 @@ Prefer declaring public member variables to using getters and setters. Getters
 and setters that don't manage object state in a nontrivial way serve to bloat
 the API and introduce unnecessary boilerplate.
 
-##Naming ##
+## Naming ##
 
 ### Components ###
 It is recommended to write components name by its purpose. 
