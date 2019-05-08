@@ -163,7 +163,9 @@ keeps coming up in code review it probably deserves a few lines in here.
   non-zero indentation levels; the only character on those lines should be a
   newline.
 - Opening braces go on the same line
-  Eg:   if (true) {
+  Eg:   
+  
+        if (true) {
             log(‘winning’);
         }
 
@@ -174,6 +176,7 @@ keeps coming up in code review it probably deserves a few lines in here.
         } else {
             log(‘finally’);
         }
+
 - Declare one variable per var statement
   Eg: var keys = [‘foo’, ‘bar’];
       Integer values = 25;
@@ -186,6 +189,7 @@ keeps coming up in code review it probably deserves a few lines in here.
 -   Return early from functions: To avoid deep nesting of if-statements, 
     always return a function’s value as early as possible. 
     Right: 
+
         function isPercentage(val) {
             if (val < 0) {
                 return false;
@@ -197,7 +201,10 @@ keeps coming up in code review it probably deserves a few lines in here.
 
             return true;
         }
-    Wrong: 
+
+    Wrong:
+
+
         function isPercentage(val) {
             if (val >= 0) {
                 if (val < 100) {
@@ -209,6 +216,8 @@ keeps coming up in code review it probably deserves a few lines in here.
                 return false;
             }
         }
+
+        
 -   Method chaining: One method per line should be used if you want to chain methods.
     You should also indent these methods so it’s easier to tell they are part of the same chain.
     Eg: 
@@ -223,12 +232,14 @@ keeps coming up in code review it probably deserves a few lines in here.
     Try to write comments that explain higher level mechanisms or clarify difficult segments of your code. 
     Don’t use comments to restate trivial things.
     Eg:
+        
         //this method handles the verification of a card transaction
         //this method triggers an event to update a users subscription...
         //if the transaction is successful
-        exports.card = async  (req,res,next) => {
-
-        }
+-   They should not state the obvious.
+-   They should be consistent with what they describe.
+-   It should be clear what they describe (e.g., which line, block).
+-   They should be readable by any future maintainer.
 
 ### Code Commit ###
 -   Commits should be done at the close of work each day and whenever you are through with a feature/bug-fix.
